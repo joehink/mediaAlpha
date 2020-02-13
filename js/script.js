@@ -263,14 +263,10 @@ const UI = {
                 return;
             }
 
-            const $formGrid = $('<div>');
             const $formGroup = $('<div>');
             const $label = $('<span>');
             const $value = $('<p>');
             const $input = $('<input>');
-
-            // Confirmation form input container
-            $formGrid.addClass('form-grid')
             
             // Confirmation form input group
             $formGroup.addClass('form-group')
@@ -295,8 +291,7 @@ const UI = {
             $formGroup.append($label);
             $formGroup.append($value);
             $formGroup.append($input);
-            $formGrid.append($formGroup);
-            $confirmationAreas.append($formGrid);
+            $confirmationAreas.append($formGroup);
         });
         
         // Display fullName value
