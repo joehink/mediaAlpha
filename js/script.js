@@ -165,8 +165,8 @@ const UI = {
         const dateStringArr = range.split(' - ');
         const dateArr = dateStringArr.map(date => new Date(date));
         const [startDate, endDate] = dateArr;
-        const formattedStartDate = `${months[startDate.getMonth()]} ${startDate.getDate()}`
-        const formattedEndDate = `${months[endDate.getMonth()]} ${endDate.getDate()}`
+        const formattedStartDate = `${months[startDate.getUTCMonth()]} ${startDate.getUTCDate()}`
+        const formattedEndDate = `${months[endDate.getUTCMonth()]} ${endDate.getUTCDate()}`
 
         return `${formattedStartDate} - ${formattedEndDate}`;
     },
@@ -309,7 +309,7 @@ const UI = {
 
         // Display birthday value
         const birthday = new Date(registrationFormData.birthday);
-        $birthday.text(`${months[birthday.getMonth()]} ${birthday.getDate()}, ${birthday.getFullYear()}`);
+        $birthday.text(`${months[birthday.getUTCMonth()]} ${birthday.getUTCDate()}, ${birthday.getUTCFullYear()}`);
         $birthday.siblings('input').val(registrationFormData.birthday);
 
         // Display confirmation form
